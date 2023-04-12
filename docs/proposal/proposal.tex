@@ -128,21 +128,23 @@ This self-deprecating joke highlights the challenges of creating The New Yorker 
 \section{Literature Survey}
 Text-to-image diffusion models are a type of generative model that can produce high-quality images from textual descriptions. Diffusion \cite{c:21} is a probabilistic process that involves gradually adding noise to an image until it becomes completely random, and then gradually removing the noise until it becomes the target image. The goal of diffusion models is to learn the latent structure of a dataset by modeling the way in which data points diffuse through the latent space.
 
-The challenge, however, is that it is unclear how the diffusion process can be directly exercised to generate images of specific unique concepts, or compose them in new roles and novel scenes. Textual Inversion \cite{c:22} allows us to teach text-to-image diffusion models new concepts - it takes a very small number of images of a user-provided concept, like an object or a style, and learns to represent it through new ``words" in the embedding space of a frozen text-to-image model. These ``words" can be composed into natural language sentences, guiding personalized creation in an intuitive way.
+The challenge, however, is that it is unclear how the diffusion process can be directly exercised to generate images of specific unique concepts, or compose them in new roles and novel scenes. Textual Inversion \cite{c:22} allows us to teach text-to-image diffusion models new concepts - it takes a small number of images of a user-provided concept, like an object or a style, and learns to represent it through new ``words" in the embedding space of a frozen text-to-image model. These ``words" can be composed into natural language sentences, guiding personalized creation in an intuitive way.
 
 \section{Project Considerations}
 
 \subsection{Dataset}
-A key challenge in fine-tuning a text-to-image diffusion model is the requirement of a large and diverse dataset, which can be difficult to obtain for a specific domain, especially if it involves rare or complex visual concepts. Textual Inversion allows us to teach an image generator a specific visual concept through the use of fine-tuning using very few image examples. As such, we’ll be relying primarily on the dataset derived for The New Yorker’s Cartoon Captioning Contest \cite{hessel2022androids}, which is composed of raw cartoon images that are mapped to quality-based ranked caption choices and an explanation describing the underlying humor of the cartoon.
+A key challenge in fine-tuning a text-to-image diffusion model is the requirement of a large and diverse dataset, which can be difficult to obtain for a specific domain, especially if it involves rare or complex visual concepts. Textual Inversion will allow us to teach an image generator a specific visual concept using very few image examples. As such, we’ll be relying primarily on the dataset derived for The New Yorker’s Cartoon Captioning Contest \cite{hessel2022androids}, which is composed of raw cartoon images that are mapped to quality-based ranked caption choices and an explanation describing the underlying humor of the cartoon.
 
 \subsection{Model}
 
-In the past, AAAI has corrected improperly formatted files submitted by the authors. Unfortunately, this has become an increasingly burdensome expense that we can no longer absorb). Consequently, if your file is improperly formatted, it will be returned to you for correction.
+In this project, we will be utilizing Stability.ai’s implementation of text-to-image diffusion model called Stable Diffusion. Specifically, we aim to explore the application of a fine-tuning technique call Textual Inversion on Stable Diffusion model. This will involve creating a new text encoder and training it on our new embeddings, i.e. the captions for the cartoons we’d like to generate. The training algorithm will effectively take a sample from the output of the frozen Stable Diffusion image encoder’s latent distribution for a training image, add noise to that sample, and then pass that noisy sample to the frozen diffusion model. Our final goal state will be when the model is able to separate the noise from the sample using the text encoding as hidden state.
 
-In the past, AAAI has corrected improperly formatted files submitted by the authors. Unfortunately, this has become an increasingly burdensome expense that we can no longer absorb). Consequently, if your file is improperly formatted, it will be returned to you for correction.
+% In addition to Textual Inversion, we aim to explore combinations of other fine-tuning techniques, such a DreamBooth, to further gain substantial control over the generated cartoon images and influence the inference process.
 
-\section{Goals}
-Please check all the pages of your PDF file. The most commonly forgotten element is the acknowledgements --- especially the correct grant number. Authors also commonly forget to add the metadata to the source, use the wrong reference style file, or don't follow the capitalization rules or comma placement for their author-title information properly.
+
+\section{Evaluation}
+
+Considering the primary goal of the project is to explore techniques to simplify the cartoon creation process by using Stable Diffusion, evaluating the generated outputs as such is subjective in nature. We aim to use a combination of both qualitative (human assessment) and quantitative metrics (CLIP scores) to gauge the effectiveness of the model.
 
 \bibliography{aaai23}
 
