@@ -120,7 +120,7 @@
 \begin{displayquote}
     % “Make sure you can see how insignificant I am.”
     % “Let me interrupt your expertise with my confidence”
-    % “Son, if you can’t say something nice, say something clever but devastating.”
+    % “Son, if you can't say something nice, say something clever but devastating.”
     ``Sometimes I wonder if I'm too old to be a cartoonist, but then I remember that I'm just not funny enough."
 \end{displayquote}
 This self-deprecating joke highlights the challenges of creating The New Yorker style cartoons, that uniquely combines a whimsical art style, witty humor, and a subtle commentary on modern life. Cartoon enthusiasts and creative professionals alike know that creating such cartoons can be a daunting task that requires both artistic talent and a knack for satire. In this project, we aim to explore techniques to simplify the cartoon creation process by using Text-to-Image Diffusion models to specifically generate high-quality The New Yorker style cartoons from natural language captions.
@@ -133,18 +133,17 @@ The challenge, however, is that it is unclear how the diffusion process can be d
 \section{Project Considerations}
 
 \subsection{Dataset}
-A key challenge in fine-tuning a text-to-image diffusion model is the requirement of a large and diverse dataset, which can be difficult to obtain for a specific domain, especially if it involves rare or complex visual concepts. Textual Inversion will allow us to teach an image generator a specific visual concept using very few image examples. As such, we’ll be relying primarily on the dataset derived for The New Yorker’s Cartoon Captioning Contest \cite{hessel2022androids}, which is composed of raw cartoon images that are mapped to quality-based ranked caption choices and an explanation describing the underlying humor of the cartoon.
+A key challenge in fine-tuning a text-to-image diffusion model is the requirement of a large and diverse dataset, which can be difficult to obtain for a specific domain, especially if it involves rare or complex visual concepts. Textual Inversion will allow us to teach the image generator a specific visual concept using relatively few image examples. As such, we'll be relying primarily on the dataset derived for The New Yorker's Cartoon Captioning Contest \cite{hessel2022androids}, which is composed of raw cartoon images that are mapped to quality-based ranked caption choices and an explanation describing the underlying humor of the cartoon.
 
 \subsection{Model}
 
-In this project, we will be utilizing Stability.ai’s implementation of text-to-image diffusion model called Stable Diffusion. Specifically, we aim to explore the application of a fine-tuning technique call Textual Inversion on Stable Diffusion. This will involve creating a new text encoder and training it on our new embeddings, i.e. the captions for the cartoons we’d like to generate. The training algorithm will effectively take a sample from the output of the frozen Stable Diffusion image encoder’s latent distribution for a training image, add noise to that sample, and then pass that noisy sample to the frozen diffusion model. Our final goal state will be when the model is able to separate the noise from the sample using the text encoding as hidden state.
+In this project, we will be utilizing Stability.ai's implementation of text-to-image diffusion model, Stable Diffusion. Specifically, we aim to explore the application of a fine-tuning technique call Textual Inversion on Stable Diffusion. This will involve creating a new text encoder and training it on our new embeddings, i.e. the captions for the cartoons we'd like to generate. The training algorithm will effectively take a sample from the output of the frozen Stable Diffusion image encoder's latent distribution for a training image, add noise to that sample, and then pass that noisy sample to the frozen diffusion model. Our final goal state will be when the model is able to separate the noise from the sample using our text encoding as hidden state.
 
 % In addition to Textual Inversion, we aim to explore combinations of other fine-tuning techniques, such a DreamBooth, to further gain substantial control over the generated cartoon images and influence the inference process.
 
-
 \section{Evaluation}
 
-Considering the goal of this project is to explore techniques to simplify the cartoon creation process using Stable Diffusion, evaluating the generated outputs as such will be subjective in nature. We aim to use a combination of both qualitative (human assessment) and quantitative metrics (CLIP scores) to gauge the effectiveness of the model.
+Considering the goal of this project is to explore techniques to simplify the cartoon creation process using Stable Diffusion, evaluating the generated outputs as such will be subjective in nature. We aim to use a combination of both qualitative (human assessment) and quantitative metrics (such as CLIP scores) to gauge the effectiveness of the model.
 
 \bibliography{aaai23}
 
