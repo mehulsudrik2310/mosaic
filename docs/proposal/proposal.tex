@@ -126,17 +126,14 @@
 This self-deprecating joke highlights the challenges of creating The New Yorker style cartoons, that uniquely combines a whimsical art style, witty humor, and a subtle commentary on modern life. Cartoon enthusiasts and creative professionals alike know that creating such cartoons can be a daunting task that requires both artistic talent and a knack for satire. In this project, we aim to explore techniques to simplify the cartoon creation process by using Text-to-Image Diffusion models to specifically generate high-quality The New Yorker style cartoons from natural language captions.
 
 \section{Literature Survey}
-Text-to-image diffusion models \cite{c:23} are a type of generative model that can produce high-quality images from textual descriptions. Diffusion \cite{c:21} is a probabilistic process that involves gradually adding noise to an image until it becomes completely random, and then gradually removing the noise until it becomes the target image. The goal of diffusion models is to learn the latent structure of a dataset by modeling the way in which data points diffuse through the latent space.
+Text-to-image diffusion models are a type of generative model that can produce high-quality images from textual descriptions. Diffusion \cite{c:21} is a probabilistic process that involves gradually adding noise to an image until it becomes completely random, and then gradually removing the noise until it becomes the target image. The goal of diffusion models is to learn the latent structure of a dataset by modeling the way in which data points diffuse through the latent space.
 
 The challenge, however, is that it is unclear how the diffusion process can be directly exercised to generate images of specific unique concepts, or compose them in new roles and novel scenes. Textual Inversion \cite{c:22} allows us to teach text-to-image diffusion models new concepts - it takes a very small number of images of a user-provided concept, like an object or a style, and learns to represent it through new ``words" in the embedding space of a frozen text-to-image model. These ``words" can be composed into natural language sentences, guiding personalized creation in an intuitive way.
 
 \section{Project Considerations}
 
-The latest version of the AAAI style file is available on AAAI's website. Download this file and place it in the \TeX\ search path. Placing it in the same directory as the paper should also work. You must download the latest version of the complete AAAI Author Kit so that you will have the latest instruction set and style file.
-
 \subsection{Dataset}
-
-In the \LaTeX{} source for your paper, you \textbf{must} place the following lines as shown in the example in this subsection. This command set-up is for three authors. Add or subtract author and address lines as necessary, and uncomment the portions that apply to you. In most instances, this is all you need to do to format your paper in the Times font. The helvet package will cause Helvetica to be used for sans serif. These files are part of the PSNFSS2e package, which is freely available from many Internet sites (and is often part of a standard installation).
+A key challenge in fine-tuning a text-to-image diffusion model is the requirement of a large and diverse dataset, which can be difficult to obtain for a specific domain, especially if it involves rare or complex visual concepts. Textual Inversion allows us to teach an image generator a specific visual concept through the use of fine-tuning using very few image examples. As such, we’ll be relying primarily on the dataset derived for The New Yorker’s Cartoon Captioning Contest \cite{hessel2022androids}, which is composed of raw cartoon images that are mapped to different caption choices, ranked based on quality and an explanation describing the underlying humor of the cartoon.
 
 \subsection{Model}
 
@@ -144,12 +141,8 @@ In the past, AAAI has corrected improperly formatted files submitted by the auth
 
 In the past, AAAI has corrected improperly formatted files submitted by the authors. Unfortunately, this has become an increasingly burdensome expense that we can no longer absorb). Consequently, if your file is improperly formatted, it will be returned to you for correction.
 
-\section{Goals and Deliverables}
-Please check all the pages of your PDF file. The most commonly forgotten element is the acknowledgements --- especially the correct grant number. Authors also commonly forget to add the metadata to the source, use the wrong reference style file, or don't follow the capitalization rules or comma placement for their author-title information properly. A final common problem is text (expecially equations) that runs into the margin. You will need to fix these common errors before submitting your file.
-
-\bibentry{c:21}
-\bibentry{c:22}
-\bibentry{c:23}
+\section{Goals}
+Please check all the pages of your PDF file. The most commonly forgotten element is the acknowledgements --- especially the correct grant number. Authors also commonly forget to add the metadata to the source, use the wrong reference style file, or don't follow the capitalization rules or comma placement for their author-title information properly.
 
 \bibliography{aaai23}
 
