@@ -4,7 +4,6 @@ Adapted from https://github.com/huggingface/diffusers/blob/main/examples/text_to
 
 import os
 from typing import Dict, Tuple
-from PIL import Image
 
 import keras_cv
 import numpy as np
