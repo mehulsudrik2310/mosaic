@@ -18,4 +18,4 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK;
 singularity exec --nv \
   --overlay /scratch/$USER/my_env/overlay-50G-10M.ext3:rw \
   /scratch/work/public/singularity/cuda11.8.86-cudnn8.7-devel-ubuntu22.04.2.sif \
-  /bin/bash -c "source /ext3/env.sh; pip install -r requirements.txt; python finetune.py"
+  /bin/bash -c "source /ext3/env.sh; pip install -r requirements.txt; python finetune.py --mp"

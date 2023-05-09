@@ -49,7 +49,7 @@ class Dataset:
 
         data_path = tf.keras.utils.get_file(
             origin=DEFAULT_DATA_ARCHIVE,
-            untar=True,
+            extract=True,
         )
         data_path = os.path.splitext(data_path)[0]
 
