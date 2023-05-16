@@ -35,6 +35,23 @@ A Stable Diffusion model can be decomposed into several key components:
 - A diffusion model that refines a latent vector and produces another latent vector, conditioned on the encoded text prompt.
 - A decoder that generates images given a latent vector from the diffusion model.
 
+During the process of generating an image from a text prompt, the image encoder is not typically employed.
+
+However, during the process of fine-tuning, the workflow goes like the following:
+
+1. An input text prompt is projected to a latent space by the text encoder.
+2. An input image is projected to a latent space by the image encoder portion of the VAE.
+3. A small amount of noise is added to the image latent vector for a given timestep.
+4. The diffusion model uses latent vectors from these two spaces along with a timestep embedding to predict the noise that was added to the image latent.
+5. A reconstruction loss is calculated between the predicted noise and the original noise added in step 3.
+6. Finally, the diffusion model parameters are optimized w.r.t this loss using gradient descent.
+
+Note that only the diffusion model parameters are updated during fine-tuning, while the (pre-trained) text and the image encoders are kept frozen.
+
+### Fine-tuned weights
+
+You can find the fine-tuned diffusion model weights [here](./checkpoints/README.md)
+
 ## Training
 
 Fine-tuning code is provided in `finetune.py`. Before running training, ensure you have the dependencies (refer to `requirements.txt`) installed. See **Usage** for more details.
@@ -45,10 +62,6 @@ than the previous one.
 For avoiding OOM and faster training, it's recommended to use a V100 GPU at least. We used an RTX8000.
 
 **Note**: For the scope of the project, only the diffusion model is fine-tuned. The VAE and the text encoder are kept frozen.
-
-### Fine-tuned weights
-
-You can find the fine-tuned diffusion model weights [here](./checkpoints/README.md)
 
 ## Inference
 
@@ -117,8 +130,14 @@ scheduling a batch job on an HPC cluster using `sbatch scripts/finetune.sbatch`.
 
 ## References
 
-The code and techniques used in this project are adapted from this excellent guides on [Textual Inversion](https://keras.io/examples/generative/fine_tune_via_textual_inversion/) and [Fine-Tuning
+The code and techniques used in this project are adapted from these excellent guides on [Textual Inversion](https://keras.io/examples/generative/fine_tune_via_textual_inversion/) and [Fine-Tuning
 Stable Diffusion models](https://keras.io/examples/generative/finetune_stable_diffusion/), with neccesary changes made to achieve the goal of the project.
+
+## Authors
+
+- Mehul Sudrik (ms14029)
+- Rajesh Nagula (rgn5646)
+- Utsav Oza (ugo1)
 
 ## License
 
