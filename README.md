@@ -105,10 +105,10 @@ Prompt (Image Description) | Stable Diffusion | Stable Diffusion (Fine-Tuned) | 
 `A businessman is walking down the street. Next to him is another man, also with a briefcase` | ![](art/stable_diffusion_2.png) | ![](art/finetuned_2.png) | ![](art/original_2.png)
 
 
-Prompt (Image Captions) | Stable Diffusion | Stable Diffusion (FIne-Tuned) | Original
-:-------------------------:|:-------------------------:|:-------------------------:
-`A man is sitting in an office on his computer. He is speaking with a rat man who is at his computer. New Yorker Style Cartoon` | ![](./art/original_1.png) | ![](art/finetuned_1.png)
-`
+Prompt (Image Captions) | Stable Diffusion | Stable Diffusion (Fine-Tuned) | Original
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+`Evolution can be so tacky.` | ![](./art/stable_diffusion_4.png) |![](./art/finetuned_4.png) | ![](./art/original_4.png)
+`Wait, this is yesterday's` | ![](./art/stable_diffusion_5.png) |  ![](./art/finetuned_5.png) |  ![](./art/original_5.png)
 
 
 ## Project Structure
