@@ -100,6 +100,8 @@ plot_images(generated_images, "Fine-tuned on The New Yorker Caption Contest Data
 
 Prompt | Original | Fine-Tuned
 :-------------------------:|:-------------------------:|:-------------------------:
+`A man is sitting in an office on his computer. He is speaking with a rat man who is at his computer. New Yorker Style Cartoon` | ![](./art/original_1.png) | ![](art/finetuned_1.png)
+
 
 ## Project Structure
 
