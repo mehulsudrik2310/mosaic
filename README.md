@@ -104,7 +104,8 @@ Prompt | Original | Fine-Tuned
 ## Project Structure
 
 | File/Directory | Description |
-| `art` | |
+|----------------|-------------|
+| `art` | Images/artwork |
 | `checkpoints` | Fine-tuned model checkpoints |
 | `notebooks` | Interactive notebooks for training and inference |
 | `outputs` | Generated images for different fine-tuned model |
