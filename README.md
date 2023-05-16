@@ -101,8 +101,8 @@ plot_images(generated_images, "Fine-tuned on The New Yorker Caption Contest Data
 Prompt (Image Description) | Stable Diffusion | Stable Diffusion (Fine-Tuned) | Original
 :-------------------------:|:------:|:-------------------:|:-------------------------:
 `A man is sitting in an office on his computer. He is speaking with a rat man who is at his computer. New Yorker Style Cartoon` | ![](./art/stable_diffusion_1.png) | ![](art/finetuned_1.png) |  ![](./art/original_1.png)
-`Two soldiers are on horseback in a field. A bunch of businessman are trailing along behind them.` | ![](art/stable_diffusion_3.png) | ![](art/finetuned_3.png)
-`A businessman is walking down the street. Next to him is another man, also with a briefcase` | ![](art/stable_diffusion_2.png) | ![](art/finetuned_2.png) | ![]()
+`Two soldiers are on horseback in a field. A bunch of businessman are trailing along behind them.` | ![](art/stable_diffusion_3.png) | ![](art/finetuned_3.png) | ![](art/original_3.png)
+`A businessman is walking down the street. Next to him is another man, also with a briefcase` | ![](art/stable_diffusion_2.png) | ![](art/finetuned_2.png) | ![](art/original_2.png)
 
 
 Prompt (Image Captions) | Original | Fine-Tuned
