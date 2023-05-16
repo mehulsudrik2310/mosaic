@@ -98,6 +98,10 @@ plot_images(generated_images, "Fine-tuned on The New Yorker Caption Contest Data
 
 ## Results
 
+Prompt | Original | Fine-Tuned
+:-------------------------:|:-------------------------:|:-------------------------:
+
+
 Actual Cartoon | Stable Diffusion | Fine-tuned Stable Diffusion Model |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](./plots/dqn.jpg)  |  ![](./plots/dqn_validation.jpg) |
