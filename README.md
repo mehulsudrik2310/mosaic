@@ -101,10 +101,17 @@ plot_images(generated_images, "Fine-tuned on The New Yorker Caption Contest Data
 Prompt | Original | Fine-Tuned
 :-------------------------:|:-------------------------:|:-------------------------:
 
+## Project Structure
 
-Actual Cartoon | Stable Diffusion | Fine-tuned Stable Diffusion Model |
-:-------------------------:|:-------------------------:|:-------------------------:
-![](./plots/dqn.jpg)  |  ![](./plots/dqn_validation.jpg) |
+| File/Directory | Description |
+| `art` | |
+| `checkpoints` | Fine-tuned model checkpoints |
+| `notebooks` | Interactive notebooks for training and inference |
+| `outputs` | Generated images for different fine-tuned model |
+| `scripts` | SLURM batch files |
+| `dataset.py` | Helper class to load and preprocess the dataset |
+| `finetune.py` | Entry point for fine-tuning stable diffusion model |
+| `trainer.py` | Procedure for training the diffusion model |
 
 
 ## Usage
