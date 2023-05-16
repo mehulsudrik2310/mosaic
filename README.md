@@ -59,7 +59,7 @@ Fine-tuning code is provided in `finetune.py`. Before running training, ensure y
 When you launch training, a diffusion model checkpoint will be generated epoch-wise only if the current loss is lower
 than the previous one.
 
-For avoiding OOM and faster training, it's recommended to use a V100 GPU at least. We used an RTX8000.
+For avoiding OOM and faster training, it's recommended to use a V100 GPU at least.
 
 **Note**: For the scope of the project, only the diffusion model is fine-tuned. The VAE and the text encoder are kept frozen.
 
@@ -105,7 +105,7 @@ Prompt (Image Description) | Stable Diffusion | Stable Diffusion (Fine-Tuned) | 
 `A businessman is walking down the street. Next to him is another man, also with a briefcase` | ![](art/stable_diffusion_2.png) | ![](art/finetuned_2.png) | ![](art/original_2.png)
 
 
-Prompt (Image Captions) | Original | Fine-Tuned
+Prompt (Image Captions) | Stable Diffusion | Stable Diffusion (FIne-Tuned) | Original
 :-------------------------:|:-------------------------:|:-------------------------:
 `A man is sitting in an office on his computer. He is speaking with a rat man who is at his computer. New Yorker Style Cartoon` | ![](./art/original_1.png) | ![](art/finetuned_1.png)
 `
